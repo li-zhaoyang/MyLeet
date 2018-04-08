@@ -1,0 +1,107 @@
+.coming-soon {
+    padding: 100px 0 180px 0;
+    text-align: center;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    min-height: 493px;
+}
+
+.coming-soon .title {
+    border-bottom: 1px solid #f5f5f5;
+    padding-bottom: 25px;
+    margin-bottom: 30px;
+}
+
+.coming-soon .title h4 {
+    font-size: 30px;
+}
+
+.coming-soon form {
+    margin: 30px 0 10px 0;
+}
+
+.leecode-header-center {
+    color: #2776DC;
+    text-align: center;
+}
+
+.leecode-header-left {
+    color: #2776DC;
+    text-align: left;
+}
+
+.leetcode-loading {
+    font-size: 40px;
+}
+
+.other-problems-loading {
+    font-size: 40px;
+}
+
+.question-information {
+    margin-right: 20px;
+}
+
+.split-para {
+    display: block;
+    margin: 10px;
+    margin-bottom: 0px;
+}
+
+.split-para span {
+    display: block;
+    float: right;
+}
+
+a {
+    color: #3498db;
+}
+
+.solution {
+    margin-top: 20px;
+}
+
+.solution .panel {
+    margin-top: 20px;
+}
+
+.panel-asphalt {
+    border-color: #2b2b2b;
+}
+
+.panel-asphalt {
+    border-color: #34495e;
+}
+
+.panel-asphalt > .panel-heading {
+    color: #FFF;
+    background-color: #34495e;
+    border-color: #34495e;
+}
+
+.panel-green-sea {
+    border-color: #ddd;
+}
+
+.panel-green-sea > .panel-heading {
+    color: #FFF;
+    background-color: #16a085;
+    border-color: #ddd;
+}
+
+.panel-body p {
+    line-height: 200%;
+    margin-bottom: 5px;
+}
+
+li {
+    line-height: 200%;
+}
+
+.complete {
+    color: #27ae60;
+}
+
+.progress-bar-general {
+    background-color: #34495e;
+}
