@@ -3,7 +3,11 @@ class Main {
     public static void main(String argvs[]){
       Solution slt = new Solution();
       //451
+<<<<<<< HEAD
       String s = "a";
+=======
+      String s = "loveleetcode";
+>>>>>>> 747c913e7606499d5f1270bfc777e0c0c3dc5d0e
       System.out.println(slt.frequencySort(s));
       // //407
       // int[][] heightMap = {
