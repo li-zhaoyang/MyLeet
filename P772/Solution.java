@@ -1,6 +1,22 @@
 import java.util.*;
 class Solution {
   public int calculate(String s) {
+
+    //check validness
+    Boolean lastIsDigit = false;
+    for (char c: s.toCharArray()) {
+      if (c == ' ') continue;
+      else if (Character.isDigit(c)) {
+        if (lastIsDigit) {
+          System.out.println("Error");
+          return ;
+        } else {
+          lastIsDigit = true;
+        }
+      } else {
+        lastIsDigit = false;
+      }
+    }
     int l;
     if(s==null || (l = s.length())==0) return 0;
     // s = "(" + s + ")";
@@ -53,9 +69,6 @@ class Solution {
     }
     if(sign=='*'){
         stack.push(stack.pop()*num);
-    }
-    if(sign=='/'){
-        stack.push(stack.pop()/num);
     }
   }
 
