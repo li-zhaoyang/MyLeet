@@ -1,21 +1,38 @@
 import java.util.*;
 class Solution {
-    public int lengthOfLIS(int[] nums) {
-      if (nums == null) return 0;
-      int[] dp = new int[nums.length];
-      Arrays.fill(dp, -1);
-      return helper(nums, 0, Long.MIN_VALUE, dp);
+  class Node {
+    Node left, right;
+    int val, sum, dup;
+    public Node(int v, int s) {
+      val = v;
+      sum = s;
+      dup = 1;
+    }
+  }
+    public List<Integer> countSmaller(int[] nums) {
+      int l = nums.length;
+      Integer[] ans = new Integer[l];
+      Node root = null;
+      for (int i = l - 1; i >= 0; i--) {
+        root = insert(nums[i], root, ans, i, 0);
+      }
+      return Arrays.asList(ans);
     }
 
-    private int helper(int[] nums, int index, long currentMax, int[] dp) {
-      if (index == nums.length) return 0;
-      int maxLength = 0;
-      for (int i = index; i < nums.length; i++) {
-        if ((long) nums[i] > currentMax) {
-          if (dp[i] == -1) dp[i] = helper(nums, i + 1, (long) nums[i], dp);
-          maxLength = Math.max(maxLength, 1 + dp[i]);
-        }
+    private Node insert(int num, Node node, Integer[] ans, int i, int preSum) {
+      if (node == null) {
+        node = new Node(num, 0);
+        ans[i] = preSum;
+      } else if (node.val == num) {
+        node.dup++;
+        ans[i] = preSum + node.sum;
+      } else if (node.val > num) {
+        node.sum ++;
+        node.left = insert(num, node.left, ans, i, preSum);
+      } else {
+        node.right = insert(num, node.right, ans, i, preSum + node.sum + node.dup);
       }
-      return maxLength;
+      return node;
+
     }
 }
